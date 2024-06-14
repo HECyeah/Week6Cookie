@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 // Array of objects - The upgrades
-const upgrade [{ upgradeName, description, Cost }] = [
+const upgrade = [
   {
     upgradeName: "Sir Can I Have Some More!",
     description: "Cookies Per Second Increases by 2",
@@ -13,6 +13,7 @@ const upgrade [{ upgradeName, description, Cost }] = [
     Cost: 1000
   },
 ]
+//.map(({ upgradeName, description, Cost }) => { return <p key={upgradeName}>{email}</p> }). Tried to map usign this methiod (https://stackoverflow.com/questions/41027663/how-to-map-an-array-of-objects-in-react) did not work. 
 
 
 export default function App() {
@@ -34,9 +35,27 @@ export default function App() {
 
   // upgrades:
   function buyUpgrade1() {
+
     setCps(cps + 1)
     setCookies(cookies - 100)
   }
+
+  /* Mapping and function upgrades - failed attempt: 
+  function Upgrade(){
+    setCps(cps + 1)
+    setCookies(cookies - 100)
+    return(
+     {
+      names.map(function (name) {
+          return <h3 key={upgrade.upgradeName}>Upgrade: {upgrade.upgradeName}</h3>
+      <p>Description: {upgrade.description}</p>
+      <p>Cost: {Cost}</p>;
+          <button> Upgrade Me!</ button>;
+    </>
+    )
+  }
+
+  */
 
   return (
     <div>
